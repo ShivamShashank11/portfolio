@@ -3,9 +3,8 @@ import "./Navbar.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import menu_close from "../../assets/menu_close.svg";
 import icon_1 from "../../assets/icon_1.png";
-// Import LinkedIn Icon SVG or use FontAwesome
-import { FaLinkedin } from "react-icons/fa"; // Example using react-icons
-import logo from "../../assets/pic.png"; // Import your new logo image
+import { FaLinkedin } from "react-icons/fa";
+import logo from "../../assets/pic.png";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
@@ -21,9 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      {/* Replace logo with the new image */}
       <img src={logo} alt="Logo" className="logo" />
-      {/* Remove the hamburger menu icon */}
       <ul ref={menuRef} className="nav-menu">
         <img
           src={menu_close}
@@ -72,10 +69,9 @@ const Navbar = () => {
           )}
         </li>
       </ul>
-      {/* LinkedIn and GitHub icons */}
       <div className="icons-right">
         <a
-          href="https://linkedin.com/in/shivamshashank961" // Your LinkedIn URL
+          href="https://linkedin.com/in/shivamshashank961"
           target="_blank"
           rel="noopener noreferrer"
           className="linkedin-icon"
@@ -84,7 +80,7 @@ const Navbar = () => {
         </a>
 
         <a
-          href="https://github.com/ShivamShashank11" // Your GitHub URL
+          href="https://github.com/ShivamShashank11"
           target="_blank"
           rel="noopener noreferrer"
           className="github-icon"

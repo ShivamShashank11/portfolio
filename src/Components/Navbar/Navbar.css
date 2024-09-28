@@ -305,3 +305,52 @@ transition: transform 0.3s ease;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.logo {
+  max-width: 100px; /* Adjust as necessary */
+  height: auto; /* Ensures the image scales correctly */
+}
+
+
+
+.nav-menu li {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.anchor-link {
+  text-decoration: none;
+  color: #333; /* Change based on your design */
+}
+
+.icons-right {
+  display: flex;
+  gap: 10px; /* Adjust spacing between icons */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .nav-menu {
+    flex-direction: row; /* Aligns items horizontally */
+    position: static; /* Position menu normally */
+    width: auto; /* Automatic width */
+    padding: 0; /* Remove padding for desktop */
+  }
+
+  .nav-menu li {
+    margin: 0 20px; /* Horizontal spacing */
+  }
+
+  .logo {
+    max-width: 150px; /* Adjust logo size for larger screens */
+  }
+}
