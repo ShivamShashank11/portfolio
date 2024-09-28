@@ -1,0 +1,701 @@
+@font-face {
+  font-family: 'Ndot-55';
+  src: url('../../assets/fonts/Ndot-55.woff2') format('woff2'),
+       url('../../assets/fonts/Ndot-55.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ntype82Mono';
+  src: url('../../assets/fonts/Ntype82Mono.woff2') format('woff2'),
+       url('../../assets/fonts/Ntype82Mono.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Your existing CSS */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin: 70px 10%;
+  font-family: 'Ndot-55', sans-serif; /* Use Ndot-55 here */
+}
+
+.about-sections {
+  display: flex;
+  gap: 60px;
+}
+
+.about-left img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-para {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Ntype82Mono', monospace; /* Use Ntype82Mono here */
+}
+
+/* Add the rest of your CSS here */
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ... rest of your CSS ... */
+
+
+
+
+.about-skill{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: 0.3s;
+}
+.about-skill p{
+    min-width: 130px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.about-skill hr{
+    outline: none;
+    border: none;
+    width: 50%;
+    height: 8px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+}
+.about-achievements{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.about-achievement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: 0.5s;
+}
+.about-achievement h1{
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #DF8908 50.41%, #B415FF 90.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about-achievement p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.about-skill:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.about-achievement:hover{
+    transform: scale(1.12);
+    transition: 0.5s;
+}
+@media(max-width:768px){
+    .about{
+        gap: 50px;
+        margin: 50px 6%;
+        align-items: start;
+    }
+    
+    .about-sections{
+        flex-direction: column;
+    }
+    .about-left{
+        display: none;
+    }
+    .about-para{
+        line-height: 25px;
+    }
+    
+    .about-skill p{
+        font-size: 16px;
+        min-width: 90px;
+    }
+    .about-skill hr{
+        height: 6px;
+    }
+    .about-achievements{
+        justify-content: space-between;
+    }
+    .about-achievement{
+        gap: 10px;
+    }
+    .about-achievement h1{
+        font-size: 28px;
+    }
+    .about-achievement p{
+        text-align: center;
+        font-size: 12px;
+    }
+}
+/* From Uiverse.io by wizard503 */ 
+button#space-btn {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  border: none;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  box-shadow: inset 0px 0px 21px #3b2ad5;
+  background: #03001e;
+  cursor: pointer;
+}
+
+button#space-btn:hover {
+  background: linear-gradient(180deg, #3b2ad5 0%,#88007d 60%,#ff0055c4 100%);
+  box-shadow: 0px 5px 10px #03001e,inset 0px 5px 10px #8611d4,inset 0 -5px 10px #ff0055a1;
+}
+
+.btn-container:hover {
+  background: #03001e;
+  box-shadow: 0px -10px 40px #9611d4,0px 5px 10px #00a2ffe3,inset 0px 10px 21px #3b2ad5;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  width: 205px;
+  height: 65px;
+  background: linear-gradient(0deg, #88007d 0%,#ff0055c4 100%);
+}
+
+button span {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+button div.star {
+  opacity: 0;
+  position: absolute;
+  border-radius: 100%;
+  background-color: white;
+  width: 1px;
+  height: 1px;
+}
+
+button:hover .star {
+  opacity: 1;
+}
+
+button .planet {
+  margin-left: -2.5em;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  background: linear-gradient(rgb(255, 0, 0), transparent),linear-gradient(to top left, rgb(255, 0, 212), transparent), linear-gradient(to top right, rgb(251, 255, 0), transparent);
+  background-blend-mode: screen;
+  background-size: 100% 200%;
+  filter: drop-shadow(0px 0px 4px rgb(82, 59, 16));
+}
+
+button:hover .planet {
+  z-index: 1;
+  opacity: 1;
+  animation: orbita 6s reverse linear infinite;
+}
+
+.planet::after {
+  content: '';
+  width: 40px;
+  height: 10px;
+  border: 3px solid #813dff;
+  filter: drop-shadow(0px 0px 1px #cf3333);
+  border-width: 0px 3px 3px 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  border-radius: 50%;
+}
+
+.planet::before {
+  position: absolute;
+  color: rgb(255, 0, 0);
+  visibility: hidden;
+}
+
+.moon {
+  margin-left: -3rem;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 5px rgb(146, 146, 140);
+}
+
+.moon::after {
+  position: absolute;
+  content: '';
+  margin-top: 15%;
+  box-shadow: 0px 0px 10px 3px #333;
+  margin-left: -10%;
+  border-radius: 100%;
+  width: 3px;
+  height: 3px;
+  background-color: rgb(121, 121, 121);
+}
+
+.moon1::after {
+  position: absolute;
+  content: '';
+  margin-top: 65%;
+  box-shadow: 0px 0px 8px 3px #333;
+  margin-left: -9px;
+  border-radius: 100%;
+  width: 2px;
+  height: 2px;
+  background-color: rgb(121, 121, 121);
+}
+
+.moon::before {
+  position: absolute;
+  content: '';
+  margin-top: 30%;
+  margin-left: -30%;
+  border-radius: 100%;
+  box-shadow: 0px 0px 8px 1px rgb(3, 3, 3);
+  width: 5px;
+  height: 5px;
+  background-color: rgb(134, 133, 133);
+}
+
+.moon1::before {
+  position: absolute;
+  content: '';
+  margin-top: 70%;
+  margin-left: 4%;
+  border-radius: 100%;
+  box-shadow: -5px 1px 4px 3px rgb(134, 133, 133);
+  width: 2px;
+  height: 2px;
+  background-color: rgb(134, 133, 133);
+}
+
+button span.moon,span.moon1 {
+  opacity: 0;
+}
+
+button:hover span.moon,span.moon1 {
+  z-index: -1;
+  opacity: 1;
+  animation: orbita 2.7s linear infinite;
+}
+
+@keyframes orbita {
+  0% {
+    transform: rotate(0deg);
+    transform: translateX(90px);
+  }
+
+  100% {
+    rotate: 360deg;
+    transform: translateX(90px);
+  }
+}
+
+/* Space background */
+.about {
+  background: url('../../assets/space_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stars effect */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stars span {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  opacity: 0;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Skill bars */
+.skill-progress {
+  position: relative;
+}
+
+.skill-progress .animate-thunder {
+  animation: thunder 1s infinite;
+}
+
+@keyframes thunder {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+.skill-progress .animate-star {
+  animation: star 1s infinite;
+}
+
+@keyframes star {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Achievements section */
+.about-achievement {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Additional styles */
+.one-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: crash 2s infinite;
+}
+
+@keyframes crash {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* From Uiverse.io by Dalyn-Liu */ 
+.one-div {
+  width: 50px;
+  height: 50px;
+  background: #1abc9c;
+  border-radius: 30% 70% 63% 37% / 30% 30% 70% 70%;
+  margin-right: 15px;
+  animation: logo 1.2s infinite alternate;
+  box-shadow: 0 0 10px #1abc9c;
+}
+
+@keyframes logo {
+  100% {
+    transform: scale(1.2);
+    border-radius: 67% 33% 37% 63% / 29% 60% 40% 71%;
+  }
+}
+
+/* Space background */
+.about {
+  background: url('../../assets/space_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stars effect */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stars span {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  opacity: 0;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Skill bars */
+.skill-progress {
+  position: relative;
+}
+
+.skill-progress .animate-thunder {
+  animation: thunder 1s infinite;
+}
+
+@keyframes thunder {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+.skill-progress .animate-star {
+  animation: star 1s infinite;
+}
+
+@keyframes star {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Achievements section */
+.about-achievement {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* Crash effect */
+.one-div {
+  position: absolute;
+  top: -100px; /* Start above the viewport */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: crash-vertical 2s infinite;
+}
+
+@keyframes crash-vertical {
+  0% {
+    top: -100px;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    top: 50%;
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1.2);
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+    transform: translateX(-50%) scale(1.5);
+  }
+}
+/* From Uiverse.io by Dalyn-Liu */ 
+.one-div {
+  width: 50px;
+  height: 50px;
+  background: #1abc9c;
+  border-radius: 30% 70% 63% 37% / 30% 30% 70% 70%;
+  margin-right: 15px;
+  animation: logo 1.2s infinite alternate;
+  box-shadow: 0 0 10px #1abc9c;
+}
+
+@keyframes logo {
+  100% {
+    transform: scale(1.2);
+    border-radius: 67% 33% 37% 63% / 29% 60% 40% 71%;
+  }
+}
+/* About.css */
+.gradient-text {
+  background: linear-gradient(to right, #6EE7B7, #3B82F6); /* Updated gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1.text-4xl {
+  font-size: 2.25rem; /* Adjust size as needed */
+  line-height: 2.5rem; /* Adjust line height */
+}
+
+p.mb-4 {
+  font-size: 1.125rem; /* Adjust size */
+  line-height: 1.75rem; /* Adjust line height */
+}
+/* About.css */
+
+/* Keyframe animations for subtle text animation */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #845EC2, #D65DB1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInOut 3s infinite ease-in-out;
+}
+
+/* From Uiverse.io by xXJollyHAKERXx */ 
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Spinner Container */
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 2s linear infinite, moveFarAway 4s ease-in-out forwards;
+  text-align: center;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center positioning */
+}
+
+/* Inner Spinner */
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+/* Spinning Animation */
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Movement Animation: One-Way */
+@keyframes moveFarAway {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -100vh) scale(0.1); /* Move far away and shrink */
+  }
+}
+/* Title Box Styling */
+.title-box {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  margin-bottom: 2rem; /* Space below the title box */
+  text-align: center; /* Center text inside the title box */
+}
+
+.title-box h1 {
+  font-size: 3rem; /* Adjust font size */
+  font-weight: 700; /* Bold font */
+  color: #845ec2; /* Gradient color or any color you prefer */
+  background: linear-gradient(to right, #845ec2, #6d4b77);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  line-height: 1.2; /* Adjust line height for better spacing */
+}
+/* Define the circle and its animation */
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: moveFarAndReturn 35s linear infinite; /* Adjusted to 35s */
+  text-align: center;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+/* Define the keyframes for moving far and coming back */
+@keyframes moveFarAndReturn {
+  0% {
+    transform: translate(0, 0) scale(1); /* Start at original position and scale */
+  }
+  50% {
+    transform: translate(100vw, 100vh) scale(0.1); /* Move far and scale down */
+  }
+  100% {
+    transform: translate(0, 0) scale(1); /* Return to original position and scale */
+  }
+}
+
+.about-img {
+  width: 80%; /* Adjust this percentage as needed */
+  max-width: 600px; /* Set a max width to prevent it from getting too large */
+}

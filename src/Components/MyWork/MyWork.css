@@ -1,0 +1,172 @@
+.mywork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Space between sections */
+  padding: 1rem;
+  background: transparent;
+}
+
+.title-box {
+  text-align: center;
+}
+
+.title-box h1 {
+  font-size: 2.5rem; /* Title size */
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.title-box img {
+  width: 100px; /* Logo size */
+  margin-top: 0.5rem;
+}
+
+.mywork-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items */
+  gap: 20px; /* Space between items */
+  max-width: 1200px; /* Max width for larger screens */
+  width: 100%; /* Full width */
+}
+
+.work-item {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 400px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  position: relative;
+  background: linear-gradient(135deg, #000000, #800080); /* Black and Purple mix */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.work-item h2 {
+  font-size: 1.5rem; /* Title size */
+  color: #ffffff;
+  margin: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.work-image,
+.work-video {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure it doesn't exceed the container */
+  object-fit: contain; /* Change to 'contain' to avoid cropping */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Show More Button */
+.mywork-showmore {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  border: 2px solid #FF69B4;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: 0.6s;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.mywork-showmore img {
+  width: 25px; /* Icon size */
+}
+
+.mywork-showmore:hover {
+  gap: 20px;
+  transition: 0.6s;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) { /* Tablet */
+  .title-box h1 {
+      font-size: 2rem; /* Smaller title size */
+  }
+
+  .mywork-container {
+      justify-content: center; /* Center items */
+  }
+
+  .work-item {
+      width: 300px; /* Adjust width for tablet */
+      height: 200px; /* Adjust height for tablet */
+  }
+
+  .work-item h2 {
+      font-size: 1.2rem; /* Smaller title size */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .title-box h1 {
+      font-size: 1.5rem; /* Smaller title size */
+  }
+
+  .mywork-showmore {
+      padding: 10px 20px; /* Adjust button padding */
+      font-size: 16px; /* Smaller font size */
+  }
+
+  .work-item {
+      width: 100%; /* Full width on mobile */
+      height: auto; /* Allow height to adjust */
+      max-width: 400px; /* Keep max width */
+  }
+
+  .work-item h2 {
+      font-size: 0.9rem; /* Smaller title size */
+  }
+}
+
+.fullscreen-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fullscreen-button:hover {
+  background-color: #0056b3;
+}
+
+.playing-video-container {
+  margin-top: 10px;
+}
+
+.playing-video {
+  width: 100%; /* Adjust to fit your layout */
+}
+
+.latest-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.latest-image {
+  width: 100%; /* Adjust as needed */
+  max-width: 600px; /* Limit max width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional styling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
