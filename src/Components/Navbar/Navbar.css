@@ -304,4 +304,56 @@ transition: transform 0.3s ease;
   transform: scale(1.2); /* Slightly scale up on hover */
   transition: background 0.3s ease, transform 0.3s ease;
 }
+/* Existing styles here */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* Maintain padding for spacing */
+  background-color: transparent; /* Keep background transparent */
+}
+
+.nav-menu {
+  display: flex; /* Flex layout for the navbar items */
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none; /* Hide hamburger by default */
+  flex-direction: column; /* Stack bars */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: #000; /* Change as per your design */
+  margin: 3px 0;
+}
+
+/* Media Query for Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Hide menu items by default */
+    flex-direction: column; /* Stack vertically */
+    width: 100%; /* Full width */
+    position: absolute; /* Allow absolute positioning */
+    top: 60px; /* Adjust to match navbar height */
+    left: 0;
+    background-color: white; /* Background for dropdown */
+    z-index: 1000; /* Ensure it is on top */
+  }
+
+  .nav-menu.open {
+    display: flex; /* Show menu items when open */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger icon */
+  }
+}
 

@@ -110,7 +110,7 @@ const Contact = () => {
           ></textarea>
           {/* New button */}
           <button className="ui-btn bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-200">
-            <span>Button</span>
+            <span>Submit</span>
           </button>
         </form>
       </div>

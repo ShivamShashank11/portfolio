@@ -1,3 +1,4 @@
+/* My Work Section */
 .mywork {
   display: flex;
   flex-direction: column;
@@ -24,6 +25,7 @@
   margin-top: 0.5rem;
 }
 
+/* My Work Container */
 .mywork-container {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap */
@@ -36,9 +38,9 @@
 .work-item {
   border-radius: 12px;
   overflow: hidden;
-  width: 400px; /* Fixed width */
-  height: 300px; /* Fixed height */
-  position: relative;
+  width: 100%;
+  max-width: 400px; /* Limit max width for larger screens */
+  height: auto; /* Maintain aspect ratio */
   background: linear-gradient(135deg, #000000, #800080); /* Black and Purple mix */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -48,7 +50,6 @@
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
-
 
 .work-item h2 {
   font-size: 1.5rem; /* Title size */
@@ -63,7 +64,7 @@
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   max-height: 100%; /* Ensure it doesn't exceed the container */
-  object-fit: contain; /* Change to 'contain' to avoid cropping */
+  object-fit: contain; /* Prevent cropping */
   display: block;
   border-radius: 8px;
 }
@@ -93,47 +94,7 @@
   transition: 0.6s;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) { /* Tablet */
-  .title-box h1 {
-      font-size: 2rem; /* Smaller title size */
-  }
-
-  .mywork-container {
-      justify-content: center; /* Center items */
-  }
-
-  .work-item {
-      width: 300px; /* Adjust width for tablet */
-      height: 200px; /* Adjust height for tablet */
-  }
-
-  .work-item h2 {
-      font-size: 1.2rem; /* Smaller title size */
-  }
-}
-
-@media (max-width: 768px) { /* Mobile */
-  .title-box h1 {
-      font-size: 1.5rem; /* Smaller title size */
-  }
-
-  .mywork-showmore {
-      padding: 10px 20px; /* Adjust button padding */
-      font-size: 16px; /* Smaller font size */
-  }
-
-  .work-item {
-      width: 100%; /* Full width on mobile */
-      height: auto; /* Allow height to adjust */
-      max-width: 400px; /* Keep max width */
-  }
-
-  .work-item h2 {
-      font-size: 0.9rem; /* Smaller title size */
-  }
-}
-
+/* Fullscreen Button */
 .fullscreen-button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -156,6 +117,7 @@
   width: 100%; /* Adjust to fit your layout */
 }
 
+/* Latest Image Container */
 .latest-image-container {
   display: flex;
   justify-content: center;
@@ -170,3 +132,43 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) { /* Tablet */
+  .title-box h1 {
+    font-size: 2rem; /* Smaller title size */
+  }
+
+  .mywork-container {
+    justify-content: center; /* Center items */
+  }
+
+  .work-item {
+    width: 300px; /* Adjust width for tablet */
+    height: 200px; /* Adjust height for tablet */
+  }
+
+  .work-item h2 {
+    font-size: 1.2rem; /* Smaller title size */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .title-box h1 {
+    font-size: 1.5rem; /* Smaller title size */
+  }
+
+  .mywork-showmore {
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .work-item {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Allow height to adjust */
+    max-width: 400px; /* Keep max width */
+  }
+
+  .work-item h2 {
+    font-size: 0.9rem; /* Smaller title size */
+  }
+}

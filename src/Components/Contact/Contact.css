@@ -1,3 +1,74 @@
+/* Contact Container */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contact Form */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Input and Textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive Button */
+.ui-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .contact-form {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-form {
+    padding: 5px;
+    gap: 10px;
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+  }
+
+  .ui-btn {
+    max-width: 100%;
+  }
+}
+
+/* Button Styles */
 .ui-btn {
   --btn-default-bg: rgb(0, 0, 0);
   --btn-padding: 15px 20px;
@@ -12,10 +83,7 @@
   --font-size: 16px;
   --font-weight: 600;
   --font-family: Menlo,Roboto Mono,monospace;
-}
-
-/* button settings */
-.ui-btn {
+  
   box-sizing: border-box;
   padding: var(--btn-padding);
   display: flex;
