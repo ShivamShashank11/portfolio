@@ -1,4 +1,5 @@
 /* My Work Section */
+/* My Work Section */
 .mywork {
   display: flex;
   flex-direction: column;
@@ -41,7 +42,7 @@
   width: 100%;
   max-width: 400px; /* Limit max width for larger screens */
   height: auto; /* Maintain aspect ratio */
-  background: linear-gradient(135deg, #000000, #800080); /* Black and Purple mix */
+  background: linear-gradient(135deg, #800080, #ff69b4); /* Purple and Pink mix */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -114,10 +115,10 @@
 }
 
 .playing-video {
-  width: 100%; /* Adjust to fit your layout */
+  width: 100%; 
 }
 
-/* Latest Image Container */
+
 .latest-image-container {
   display: flex;
   justify-content: center;
@@ -125,50 +126,61 @@
 }
 
 .latest-image {
-  width: 100%; /* Adjust as needed */
-  max-width: 600px; /* Limit max width */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Optional styling */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  width: 100%;
+  max-width: 600px;
+  height: auto; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) { /* Tablet */
+
+@media (max-width: 1024px) { 
   .title-box h1 {
-    font-size: 2rem; /* Smaller title size */
+    font-size: 2rem; 
   }
 
   .mywork-container {
-    justify-content: center; /* Center items */
+    justify-content: center; 
   }
 
   .work-item {
-    width: 300px; /* Adjust width for tablet */
-    height: 200px; /* Adjust height for tablet */
+    width: 300px; 
+    height: 200px; 
   }
 
   .work-item h2 {
-    font-size: 1.2rem; /* Smaller title size */
+    font-size: 1.2rem; 
   }
 }
 
-@media (max-width: 768px) { /* Mobile */
+@media (max-width: 768px) { 
   .title-box h1 {
-    font-size: 1.5rem; /* Smaller title size */
+    font-size: 1.5rem; 
   }
 
   .mywork-showmore {
-    padding: 10px 20px; /* Adjust button padding */
-    font-size: 16px; /* Smaller font size */
+    padding: 10px 20px; 
+    font-size: 16px; 
   }
 
   .work-item {
-    width: 100%; /* Full width on mobile */
-    height: auto; /* Allow height to adjust */
-    max-width: 400px; /* Keep max width */
+    width: 100%; 
+    height: auto; 
+    max-width: 400px; 
   }
 
   .work-item h2 {
-    font-size: 0.9rem; /* Smaller title size */
+    font-size: 0.9rem;
   }
+}
+
+.work-item {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px; /* Limit max width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  background: linear-gradient(135deg, #0000FF, #800080); /* Blue and Purple mix */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
