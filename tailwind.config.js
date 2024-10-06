@@ -10,7 +10,8 @@ module.exports = {
         spaceDark: '#1a1a2e', // Dark background like a galaxy
         spacePurple: '#845EC2', // Purple for main theme
         pink: '#FF6F91', // Pink for accents
-        
+        'light-blue-400': '#3BA0D1', // Light blue color
+        'light-purple-400': '#A77BCA', // Light purple color
       },
       keyframes: {
         pulseEffect: {
@@ -37,5 +38,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-

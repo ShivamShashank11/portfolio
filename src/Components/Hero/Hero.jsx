@@ -8,13 +8,40 @@ const Hero = () => {
   return (
     <div id="home" className="hero">
       <img src={profile_1} alt="Profile" className="profile-img" />
-      <h1 className="gradient-text">
-        <span className="text-gray-800">I'm Shivam Shashank,</span>
-        <span style={{ color: "lightblue" }}> a frontend </span>
-        <span style={{ color: "lightpurple" }}>
+      <h1
+        className="gradient-text"
+        style={{
+          background:
+            "linear-gradient(to right, lch(41 80 290), lch(81 104 150))",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        I'm Shivam Shashank,
+        <span
+          style={{
+            background:
+              "linear-gradient(to right, color(display-p3 34% 58% 73%), color(display-p3 50% 90% 50%))",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+          }}
+        >
+          a frontend
+        </span>
+        <span
+          style={{
+            background:
+              "linear-gradient(to right, color(display-p3 34% 58% 73%), color(display-p3 50% 90% 50%))",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
+          }}
+        >
           developer based in Patna, India.
         </span>
       </h1>
+
       <p style={{ color: "#424242" }}>
         "I am a recent graduate with a deep passion for web development and a
         strong foundation in both frontend and backend technologies. I am
