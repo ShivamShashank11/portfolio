@@ -4,7 +4,8 @@ import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
 import contact_image from "../../assets/mycontact.png";
 import letImage from "../../assets/Let.png"; // Import your Let.png image
-import "./Contact.css";
+import "./Contact.css"; // Ensure this CSS file isn't overriding Tailwind styles
+
 const Contact = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -73,7 +74,8 @@ const Contact = () => {
         </div>
         <form
           onSubmit={onSubmit}
-          className="contact-right w-full lg:w-1/2 p-6 bg-gray-800 rounded-lg shadow-lg"
+          className="contact-right w-full lg:w-1/2 p-6 rounded-lg shadow-lg"
+          style={{ backgroundColor: "#2c3e50" }} // Explicitly setting the form background color
         >
           <label htmlFor="name" className="block mb-1 text-gray-300">
             Your Name
@@ -84,7 +86,12 @@ const Contact = () => {
             name="name"
             id="name"
             required
-            className="w-full p-2 border border-gray-600 rounded mb-4 bg-black text-gray-300 placeholder-gray-500"
+            className="w-full p-2 rounded mb-4"
+            style={{
+              backgroundColor: "#34495e", // Input background color
+              borderColor: "#34495e", // Border color to match the background
+              color: "#ecf0f1", // Light gray text color
+            }}
           />
           <label htmlFor="email" className="block mb-1 text-gray-300">
             Your Email
@@ -95,7 +102,12 @@ const Contact = () => {
             name="email"
             id="email"
             required
-            className="w-full p-2 border border-gray-600 rounded mb-4 bg-black text-gray-300 placeholder-gray-500"
+            className="w-full p-2 rounded mb-4"
+            style={{
+              backgroundColor: "#34495e",
+              borderColor: "#34495e",
+              color: "#ecf0f1",
+            }}
           />
           <label htmlFor="message" className="block mb-1 text-gray-300">
             Write your message here
@@ -106,10 +118,21 @@ const Contact = () => {
             rows="8"
             placeholder="Enter your message"
             required
-            className="w-full p-2 border border-gray-600 rounded mb-4 bg-black text-gray-300 placeholder-gray-500"
+            className="w-full p-2 rounded mb-4"
+            style={{
+              backgroundColor: "#34495e",
+              borderColor: "#34495e",
+              color: "#ecf0f1",
+            }}
           ></textarea>
-          {/* New button */}
-          <button className="ui-btn bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-200">
+          <button
+            className="ui-btn text-white px-4 py-2 rounded"
+            style={{
+              backgroundColor: "#16a085", // Button background color
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#1abc9c")} // Hover effect
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#16a085")} // Reset after hover
+          >
             <span>Submit</span>
           </button>
         </form>
