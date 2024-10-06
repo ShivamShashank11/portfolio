@@ -1,5 +1,4 @@
 /* My Work Section */
-/* My Work Section */
 .mywork {
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@
   width: 100%;
   max-width: 400px; /* Limit max width for larger screens */
   height: auto; /* Maintain aspect ratio */
-  background: linear-gradient(135deg, #800080, #ff69b4); /* Purple and Pink mix */
+  background: linear-gradient(to right, color(display-p3 34% 58% 73%), color(display-p3 50% 90% 50%)); /* New gradient */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -118,7 +117,6 @@
   width: 100%; 
 }
 
-
 .latest-image-container {
   display: flex;
   justify-content: center;
@@ -132,7 +130,6 @@
   border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
-
 
 @media (max-width: 1024px) { 
   .title-box h1 {
@@ -172,15 +169,4 @@
   .work-item h2 {
     font-size: 0.9rem;
   }
-}
-
-.work-item {
-  border-radius: 12px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 400px; /* Limit max width for larger screens */
-  height: auto; /* Maintain aspect ratio */
-  background: linear-gradient(135deg, #0000FF, #800080); /* Blue and Purple mix */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
