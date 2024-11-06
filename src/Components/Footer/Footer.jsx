@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import pic from "../../assets/pic.png"; // Import your pic.png image
 import "./Footer.css";
@@ -16,7 +15,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <hr />
+      <div className="footer-line" /> {/* New Gradient Line */}
       <div className="footer-bottom">
         <p className="footer-bottom-left">
           © 2024 Shivam Shashank. All rights reserved.

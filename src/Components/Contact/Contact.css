@@ -18,6 +18,11 @@
   gap: 15px;
   box-sizing: border-box;
   padding: 10px;
+  background-color: black; /* Set form background to black */
+  color: white; /* Set text color to white */
+  border: 2px solid transparent; /* Thin border */
+  border-image: linear-gradient(to right, rgb(245, 12, 245), rgb(19, 180, 255), rgb(255, 192, 229)); /* Gradient border */
+  border-image-slice: 1; /* Apply the gradient to the entire border */
 }
 
 /* Form Group */
@@ -33,6 +38,11 @@ textarea {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  border: 1px solid transparent; /* Thin border */
+  background-color: black; /* Set background to black */
+  color: white; /* Set text color to white */
+  border-image: linear-gradient(to right, rgb(228, 9, 228), rgb(27, 182, 253), rgb(255, 45, 227)); /* Gradient border for input/textarea */
+  border-image-slice: 1; /* Apply the gradient border */
 }
 
 /* Responsive Button */
@@ -152,3 +162,4 @@ textarea {
   95% { content: "2"; right: 0; }
   100% { content: ""; right: 0; }
 }
+

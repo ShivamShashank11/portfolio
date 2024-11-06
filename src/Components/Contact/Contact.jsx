@@ -74,8 +74,7 @@ const Contact = () => {
         </div>
         <form
           onSubmit={onSubmit}
-          className="contact-right w-full lg:w-1/2 p-6 rounded-lg shadow-lg"
-          style={{ backgroundColor: "#2c3e50" }} // Explicitly setting the form background color
+          className="contact-form w-full lg:w-1/2 p-6 rounded-lg"
         >
           <label htmlFor="name" className="block mb-1 text-gray-300">
             Your Name
@@ -87,11 +86,6 @@ const Contact = () => {
             id="name"
             required
             className="w-full p-2 rounded mb-4"
-            style={{
-              backgroundColor: "#34495e", // Input background color
-              borderColor: "#34495e", // Border color to match the background
-              color: "#ecf0f1", // Light gray text color
-            }}
           />
           <label htmlFor="email" className="block mb-1 text-gray-300">
             Your Email
@@ -103,11 +97,6 @@ const Contact = () => {
             id="email"
             required
             className="w-full p-2 rounded mb-4"
-            style={{
-              backgroundColor: "#34495e",
-              borderColor: "#34495e",
-              color: "#ecf0f1",
-            }}
           />
           <label htmlFor="message" className="block mb-1 text-gray-300">
             Write your message here
@@ -119,19 +108,16 @@ const Contact = () => {
             placeholder="Enter your message"
             required
             className="w-full p-2 rounded mb-4"
-            style={{
-              backgroundColor: "#34495e",
-              borderColor: "#34495e",
-              color: "#ecf0f1",
-            }}
           ></textarea>
           <button
             className="ui-btn text-white px-4 py-2 rounded"
             style={{
-              backgroundColor: "#16a085", // Button background color
+              backgroundColor: "black", // Button background color is black
+              border: "2px solid", // Border with solid style
+              borderImage: "linear-gradient(to right, purple, blue, pink) 1", // Gradient border
             }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#1abc9c")} // Hover effect
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#16a085")} // Reset after hover
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#333")} // Hover effect
+            onMouseOut={(e) => (e.target.style.backgroundColor = "black")} // Reset after hover
           >
             <span>Submit</span>
           </button>

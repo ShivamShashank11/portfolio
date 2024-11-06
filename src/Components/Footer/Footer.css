@@ -7,6 +7,13 @@
   gap: 25px;
 }
 
+.footer-line {
+  height: 2px; /* Adjust thickness here if needed */
+  background: linear-gradient(90deg, #845EC2, #00C9FF, #FF69B4);
+  margin: 20px 0;
+  border: none;
+}
+
 .footer-name {
   font-size: 36px;
   font-weight: bold;

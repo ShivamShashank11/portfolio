@@ -71,7 +71,7 @@ const Navbar = () => {
       </ul>
       <div className="icons-right">
         <a
-          href="https://linkedin.com/in/shivamshashank961"
+          href="https://linkedin.com/in/shivam-shashank-616957213"
           target="_blank"
           rel="noopener noreferrer"
           className="linkedin-icon"

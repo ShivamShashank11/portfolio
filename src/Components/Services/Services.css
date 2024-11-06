@@ -14,9 +14,33 @@
     gap: 10px;
     padding: 30px;
     border-radius: 10px;
-    border: 2px solid white;
-    transition: 0.4s;
+    background-color: #000; /* Set the background color to black */
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
+    transition: transform 0.4s;
+}
+
+/* Gradient border effect */
+.services-format::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(45deg, #845EC2, #00C9FF, #FF69B4); /* Gradient colors */
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.services-format:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
+    background-color: #3f0028; /* Slightly darker color on hover */
 }
 
 .services-container {
@@ -29,19 +53,20 @@
 .services-format h3 {
     font-size: 22px;
     font-weight: 600;
+    color: #FFF; /* White text for better readability */
 }
 
 .services-format h2 {
     font-size: 30px;
     font-weight: 800;
-    background: linear-gradient(to right, color(display-p3 34% 58% 73%), color(display-p3 50% 90% 50%));
+    background: linear-gradient(to right, #845EC2, #00C9FF); /* Gradient text */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .services-format p {
-    color: #394250;
+    color: #B0B0B0; /* Light gray for readability on black */
     font-size: 20px;
     line-height: 30px;
     max-width: 300px;
@@ -52,17 +77,11 @@
     gap: 10px;
     align-items: center;
     margin-top: 20px;
+    color: #845EC2;
 }
 
 .services-readmore img {
     width: 20px;
-}
-
-.services-format:hover {
-    border: 2px solid #ff00ff;
-    background-image: linear-gradient(45deg, #3f0028, #582300);
-    transform: scale(1.05);
-    transition: 0.4s;
 }
 
 @media(max-width: 768px) {
@@ -93,13 +112,6 @@
     }
 }
 
-.services-readmore {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: #845EC2;
-}
-
 .services-readmore p {
     margin-right: 8px;
 }
@@ -113,6 +125,3 @@
 .services-readmore:hover img {
     transform: translateX(4px);
 }
-
-
-  

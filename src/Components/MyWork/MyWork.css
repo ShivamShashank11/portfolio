@@ -6,7 +6,7 @@
   justify-content: center;
   gap: 40px; /* Space between sections */
   padding: 1rem;
-  background: transparent;
+  background: transparent; /* No background */
 }
 
 .title-box {
@@ -15,7 +15,9 @@
 
 .title-box h1 {
   font-size: 2.5rem; /* Title size */
-  color: #ffffff;
+  background: linear-gradient(to right, #22A7F0, #F320C6); /* Blue to Pink gradient */
+  -webkit-background-clip: text;
+  color: transparent;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
@@ -36,19 +38,23 @@
 }
 
 .work-item {
-  border-radius: 12px;
+  border-radius: 20px; /* Slightly curved border for a modern look */
   overflow: hidden;
   width: 100%;
   max-width: 400px; /* Limit max width for larger screens */
   height: auto; /* Maintain aspect ratio */
-  background: linear-gradient(to right, color(display-p3 34% 58% 73%), color(display-p3 50% 90% 50%)); /* New gradient */
+  border: 2px solid transparent; /* Thin border */
+  background-clip: content-box; /* Ensures the background doesn't cover the border */
+  background-color: transparent; /* No background color */
+  border-image: linear-gradient(to right, rgb(247, 20, 247), rgb(34, 167, 230), rgb(240, 48, 198)) 1; /* Apply gradient to the border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 
 .work-item:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 22px; /* Slightly more rounded on hover */
 }
 
 .work-item h2 {
@@ -66,7 +72,7 @@
   max-height: 100%; /* Ensure it doesn't exceed the container */
   object-fit: contain; /* Prevent cropping */
   display: block;
-  border-radius: 8px;
+  border-radius: 8px; /* Slight curve for the image/video */
 }
 
 /* Show More Button */
@@ -131,6 +137,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+/* Responsive Styles */
 @media (max-width: 1024px) { 
   .title-box h1 {
     font-size: 2rem; 
