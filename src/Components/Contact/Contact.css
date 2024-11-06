@@ -21,7 +21,7 @@
   background-color: black; /* Set form background to black */
   color: white; /* Set text color to white */
   border: 2px solid transparent; /* Thin border */
-  border-image: linear-gradient(to right, rgb(236, 76, 236), rgb(19, 180, 255), rgb(255, 192, 229)); /* Gradient border */
+  border-image: linear-gradient(to right, rgb(245, 86, 236), rgb(19, 180, 255), rgb(255, 192, 229)); /* Gradient border */
   border-image-slice: 1; /* Apply the gradient to the entire border */
 }
 
