@@ -125,3 +125,19 @@
 .services-readmore:hover img {
     transform: translateX(4px);
 }
+.services-format::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(45deg, #845ec2, #00c9ff, #ff69b4);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none; /* Prevent blocking clicks */
+  }
+  

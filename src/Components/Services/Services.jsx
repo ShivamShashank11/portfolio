@@ -9,16 +9,18 @@ const Services = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleReadMore = (index) => {
+    console.log("Read more clicked for index:", index); // Debugging: Check if the function triggers
     if (expandedIndex === index) {
       setExpandedIndex(null);
     } else {
       setExpandedIndex(index);
     }
+    console.log("Expanded Index:", expandedIndex); // Debugging: Check updated state
   };
 
   return (
     <div id="services" className="services">
-      {/* Add the image here */}
+      {/* Display header image */}
       <img src={myworkImage} alt="My Work" className="services-image" />
       <div className="services-container">
         {Services_Data.map((service, index) => {
@@ -37,7 +39,11 @@ const Services = () => {
                 onClick={() => handleReadMore(index)}
               >
                 <p>{isExpanded ? "Show Less" : "Read More"}</p>
-                <img src={arrow_icon} alt="Arrow icon" />
+                <img
+                  src={arrow_icon}
+                  alt="Arrow icon"
+                  onClick={(e) => e.stopPropagation()} // Prevent bubbling issues
+                />
               </div>
             </div>
           );
