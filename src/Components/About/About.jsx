@@ -27,8 +27,8 @@ const programmingLanguages = [
 const frameworks = [
   { name: "React", percentage: 75, icon: reactIcon },
   { name: "Node.js", percentage: 80, icon: nodejsIcon },
-  { name: "Express.js", percentage: 50, icon: expressjsIcon },
-  { name: "Tailwind CSS", percentage: 70, icon: tailwindIcon },
+  { name: "Express.js", percentage: 80, icon: expressjsIcon },
+  { name: "Tailwind CSS", percentage: 60, icon: tailwindIcon },
 ];
 
 const databases = [
