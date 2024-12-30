@@ -2,6 +2,7 @@ import Apple1 from '../assets/Apple1.png';
 import codingo from '../assets/codingo.png'
 import   food from '../assets/food.png'; // Import the video file correctly
 import chatme from '../assets/chatme.png';
+import img1 from '../assets/img1.png';
 const mywork_data = [
     {
         w_no: 1,
@@ -22,7 +23,15 @@ const mywork_data = [
         w_no: 4,  
         w_name: "Codingo",
         w_img: codingo,  
-    }
+    },
+      {
+        w_no: 5,
+        w_name: "Chocolate Cart" ,
+        w_img: img1,
+      }
+
+
+
 
 ];
 

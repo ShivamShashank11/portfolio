@@ -22,7 +22,15 @@ const Services_Data = [
         s_name: "Codingo",
         s_desc: "A comprehensive website dedicated to Data Structures and Algorithms (DSA), featuring a wide range of topics essential for coding interviews. Codingo provides users with a curated selection of the most frequently asked questions from top companies, making it an invaluable resource for aspiring developers. The platform is designed to enhance learning and improve problem-solving skills, helping users excel in technical interviews.",
        
+    },
+    {
+        s_no: "05",
+        s_name: "Chocolate Cart",
+        s_desc:"This project is a mini e-commerce website designed for selling chocolates online. It allows users to browse through a variety of chocolate products and securely make purchases. The website integrates Stripe for online payments, ensuring safe and smooth transactions. The goal is to provide a user-friendly platform for chocolate lovers to shop conveniently from anywhere. "
     }
+
+
+    
 ];
 
 export default Services_Data;
