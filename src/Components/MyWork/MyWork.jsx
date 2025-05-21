@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./MyWork.css";
 
-import mywork_data from "../../assets/mywork_data"; // Ensure this file exists and is correctly structured
+import mywork_data from "../../assets/mywork_data"; // Ensure this file exists
 import arrow_icon from "../../assets/arrow_icon.svg";
-import mylatest from "../../assets/mylatest.png"; // Import your latest image
+import mylatest from "../../assets/mylatest.png";
 
 const MyWork = () => {
   const [modalContent, setModalContent] = useState(null);
@@ -21,10 +21,12 @@ const MyWork = () => {
 
   return (
     <div id="work" className="mywork">
-      <div className="title-box">{/* Removed the title */}</div>
+      <div className="title-box">{/* Optional title */}</div>
+
       <div className="latest-image-container">
         <img src={mylatest} alt="My Latest Work" className="latest-image" />
       </div>
+
       <div className="mywork-container">
         {mywork_data.map((item) => (
           <div key={item.w_no} className="work-item">
@@ -39,7 +41,7 @@ const MyWork = () => {
                     <img
                       src={item.w_img}
                       alt={item.w_name}
-                      className="modal-content"
+                      className="modal-preview"
                     />
                   )
                 }
@@ -59,7 +61,7 @@ const MyWork = () => {
                       autoPlay
                       loop
                       muted
-                      className="modal-content"
+                      className="modal-preview"
                     >
                       <source src={item.w_video} type="video/webm" />
                     </video>
@@ -73,18 +75,18 @@ const MyWork = () => {
           </div>
         ))}
       </div>
+
       <div className="mywork-showmore">
         <p>Show More</p>
         <img src={arrow_icon} alt="Show More" />
       </div>
 
-      {/* Modal */}
       {modalVisible && (
         <div className="modal" onClick={closeModal}>
           <span className="close" onClick={closeModal}>
             &times;
           </span>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-body" onClick={(e) => e.stopPropagation()}>
             {modalContent}
           </div>
         </div>
