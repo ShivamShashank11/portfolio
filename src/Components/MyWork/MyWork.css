@@ -31,6 +31,7 @@
 }
 
 .work-item {
+  position: relative; /* needed for ::before */
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 12px; /* Slightly curved */
   overflow: hidden;
@@ -38,15 +39,42 @@
   max-width: 400px;
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border: 2px solid transparent;
-  border-image: linear-gradient(to right, rgb(247, 20, 247), rgb(34, 167, 230), rgb(240, 48, 198)) 1;
+  border: none; /* remove old border */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  z-index: 0; /* base layer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Gradient border effect */
+.work-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px; /* Border thickness */
+  background: linear-gradient(45deg, #845EC2, #00C9FF, #FF69B4);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1; /* behind the content */
 }
 
 .work-item:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   border-radius: 14px; /* Slight increase on hover */
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 1; /* bring above on hover */
 }
 
 .work-item h2 {
