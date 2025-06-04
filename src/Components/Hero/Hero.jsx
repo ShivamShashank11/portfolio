@@ -15,7 +15,7 @@ const Hero = () => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        I'm Shivam Shashank,
+        I'm Shivam Shashank,{" "}
         <span
           style={{
             background: "linear-gradient(to right, #6b21a8, #6b21a8)",
@@ -37,14 +37,16 @@ const Hero = () => {
           developer based in Patna, India.
         </span>
       </h1>
-      <p style={{ color: "#424242" }}>
-        "I am a recent graduate with a deep passion for web development and a
+
+      <p style={{ color: "#424242", marginTop: "1rem" }}>
+        I am a recent graduate with a deep passion for web development and a
         strong foundation in both frontend and backend technologies. I am
         excited to leverage my skills in HTML, CSS, JavaScript, React.js,
         Next.js, Express, MongoDB, and Firebase to build dynamic, responsive,
         and user-friendly web applications. My focus is on creating seamless,
-        interactive experiences that adapt to users' needs."
+        interactive experiences that adapt to users' needs.
       </p>
+
       <div className="hero-action flex gap-4 mt-8">
         <AnchorLink className="btn" offset={50} href="#contact">
           Connect with me
