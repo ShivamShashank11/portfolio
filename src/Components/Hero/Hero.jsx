@@ -50,7 +50,7 @@ const Hero = () => {
           Connect with me
         </AnchorLink>
         <a
-          href="/cv11.pdf"
+          href="/shivamcv12.pdf"
           className="btn"
           target="_blank"
           rel="noopener noreferrer"
