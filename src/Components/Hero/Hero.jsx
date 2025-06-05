@@ -24,7 +24,7 @@ const Hero = () => {
             display: "inline-block",
           }}
         >
-          a frontend
+          a full stack
         </span>{" "}
         <span
           style={{
