@@ -367,3 +367,242 @@ p {
     height: 40px;
   }
 }
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Orbit animation area */
+.orbit-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Group orbit wrapper for some planets */
+.orbit-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: orbit-rotate 80s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/* Common styles for all planets */
+.planet {
+  position: absolute;
+  object-fit: contain;
+}
+
+/* Group orbit planets size */
+.planet1,
+.planet2,
+.planet3,
+.planet4,
+.planet5,
+.planet6 {
+  width: 30px;
+  height: 30px;
+}
+
+/* Positions of group orbit planets */
+.planet1 {
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.planet2 {
+  top: 30%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+.planet3 {
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+.planet4 {
+  bottom: 30%;
+  left: 80%;
+  transform: translate(-50%, 50%);
+}
+.planet5 {
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.planet6 {
+  bottom: 30%;
+  left: 20%;
+  transform: translate(-50%, 50%);
+}
+
+/* Sun styles and orbit */
+.sun {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Earth and Mars sizes */
+.earth,
+.mars {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+}
+
+/* Orbit animations for sun, earth, mars */
+/* Increased orbit radius for spacing */
+.orbit-sun {
+  animation: orbit-sun-rotate 40s linear infinite;
+  transform-origin: 50px 50px; /* larger radius */
+}
+
+.orbit-earth {
+  animation: orbit-earth-rotate 60s linear infinite;
+  transform-origin: 110px 110px; /* bigger radius */
+}
+
+.orbit-mars {
+  animation: orbit-mars-rotate 80s linear infinite;
+  transform-origin: 170px 170px; /* biggest radius */
+}
+
+/* Keyframes with updated translateX matching the above radius */
+@keyframes orbit-sun-rotate {
+  from {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-earth-rotate {
+  from {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-mars-rotate {
+  from {
+    transform: rotate(0deg) translateX(170px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(170px) rotate(-360deg);
+  }
+}
+
+/* Rotation animation for group orbit planets */
+@keyframes orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Profile Image */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(107, 33, 168, 0.6);
+}
+
+/* Buttons */
+.btn {
+  background-color: #6b21a8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #581c87;
+}
+
+/* Gradient text helper */
+.gradient-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+  .gradient-text {
+    font-size: 2rem;
+  }
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+  .earth,
+  .mars {
+    width: 30px;
+    height: 30px;
+  }
+  .orbit-sun {
+    transform-origin: 30px 30px;
+  }
+  .orbit-earth {
+    transform-origin: 70px 70px;
+  }
+  .orbit-mars {
+    transform-origin: 100px 100px;
+  }
+  @keyframes orbit-sun-rotate {
+    from {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+  @keyframes orbit-earth-rotate {
+    from {
+      transform: rotate(0deg) translateX(70px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(70px) rotate(-360deg);
+    }
+  }
+  @keyframes orbit-mars-rotate {
+    from {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+}
