@@ -946,8 +946,986 @@ p {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
   }
+  /* Existing Styles */
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-img {
+  margin-top: 30px;
+  width: 240px;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  text-align: center;
+  width: 65%;
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 70px;
+}
+
+.hero h1 span {
+  background: linear-gradient(
+    270deg,
+    #7c23ca,
+    #b229db
+  ); /* Purple to Sky Blue */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  width: 50%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.hero-action {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+/* Button Styles */
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(
+    267deg,
+    #1d2b64,
+    #e94e77,
+    #ff6f61,
+    #e6a4b4
+  ); /* Galaxy gradient */
+  color: #fff;
+  border-radius: 50px; /* Rounded corners */
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions for background and color */
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: #fff; /* Icon color */
+  background-color: #000; /* Background color for icon wrapper */
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #000; /* Dark background color on hover */
+}
+
+.button:hover .button__icon-wrapper {
+  color: #000; /* Dark color for icon on hover */
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+    margin-top: 50px;
+    width: 200px;
+  }
+
+  .hero h1 {
+    margin-top: 10px;
+    width: 90%;
+    font-size: 35px;
+  }
+
+  .hero p {
+    width: 80%;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 5px 0px;
+  }
+
+  .hero-action {
+    gap: 10px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+}
+
+/* From Uiverse.io by kleenpulse */
+.btn {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --curve-size: 0.5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+  cursor: pointer;
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+  clip-path: polygon(
+    /* Top-left */ 0% var(--curve-size),
+    var(--curve-size) 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - var(--curve-size)),
+    /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+  transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+    /* Top-left */ var(--border-width)
+      calc(var(--curve-size) + var(--border-width) * 0.5),
+    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+    /* Top-left */ calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    /* bottom-right 1 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    /* bottom-right 2 */
+      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: #fff;
+}
+.highlight {
+  background: linear-gradient(
+    to right,
+    #800cd3,
+    #1e90ff
+  ) !important; /* Purple to Blue */
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.highlight {
+  color: #1f2937; /* This is the hex code for gray-800 in Tailwind CSS */
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+/* Hero.css */
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    rgb(13, 0, 128),
+    #911edd
+  ); /* Using light sky blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1rem;
+  color: #424242;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.hero-action {
+  margin-top: 40px;
+}
+
+/* Social Media Cards */
+.social-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  width: 50px;
+  height: 50px;
+}
+
+.socialSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Tablet view */
+  .hero {
+    padding: 20px;
+  }
+  .gradient-text {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  .social-cards {
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile view */
+  .hero {
+    padding: 10px;
+  }
+  .gradient-text {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+  .hero-action {
+    flex-direction: column;
+  }
+  .social-cards {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 40px;
+    height: 40px;
+  }
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Orbit animation area */
+.orbit-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Group orbit wrapper for some planets */
+.orbit-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: orbit-rotate 80s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/* Common styles for all planets */
+.planet {
+  position: absolute;
+  object-fit: contain;
+}
+
+/* Group orbit planets size */
+.planet1,
+.planet2,
+.planet3,
+.planet4,
+.planet5,
+.planet6 {
+  width: 30px;
+  height: 30px;
+}
+
+/* Positions of group orbit planets */
+.planet1 {
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.planet2 {
+  top: 30%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+.planet3 {
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+.planet4 {
+  bottom: 30%;
+  left: 80%;
+  transform: translate(-50%, 50%);
+}
+.planet5 {
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.planet6 {
+  bottom: 30%;
+  left: 20%;
+  transform: translate(-50%, 50%);
+}
+
+/* Sun styles and orbit */
+.sun {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Earth and Mars sizes */
+.earth,
+.mars {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+}
+
+/* Orbit animations for sun, earth, mars */
+/* Increased orbit radius for spacing */
+.orbit-sun {
+  animation: orbit-sun-rotate 40s linear infinite;
+  transform-origin: 50px 50px; /* larger radius */
+}
+
+.orbit-earth {
+  animation: orbit-earth-rotate 60s linear infinite;
+  transform-origin: 110px 110px; /* bigger radius */
+}
+
+.orbit-mars {
+  animation: orbit-mars-rotate 80s linear infinite;
+  transform-origin: 170px 170px; /* biggest radius */
+}
+
+/* Keyframes with updated translateX matching the above radius */
+@keyframes orbit-sun-rotate {
+  from {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-earth-rotate {
+  from {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-mars-rotate {
+  from {
+    transform: rotate(0deg) translateX(170px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(170px) rotate(-360deg);
+  }
+}
+
+/* Rotation animation for group orbit planets */
+@keyframes orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Profile Image */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(107, 33, 168, 0.6);
+}
+
+/* Buttons */
+.btn {
+  background-color: #6b21a8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #581c87;
+}
+
+/* Gradient text helper */
+.gradient-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+  .gradient-text {
+    font-size: 2rem;
+  }
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+  .earth,
+  .mars {
+    width: 30px;
+    height: 30px;
+  }
+  .orbit-sun {
+    transform-origin: 30px 30px;
+  }
+  .orbit-earth {
+    transform-origin: 70px 70px;
+  }
+  .orbit-mars {
+    transform-origin: 100px 100px;
+  }
+  @keyframes orbit-sun-rotate {
+    from {
+      transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+  }
+  @keyframes orbit-earth-rotate {
+    from {
+      transform: rotate(0deg) translateX(70px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(70px) rotate(-360deg);
+    }
+  }
+  @keyframes orbit-mars-rotate {
+    from {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+}
+/* Hero.css - Consolidated, Centered, and ALL elements styled */
+
+/* --- Base Hero Container & Layout --- */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; /* Crucial for containing background elements like stars/planets */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  text-align: center; /* Center text within the hero-content */
+  z-index: 1; /* Ensures hero content is above body background */
+  padding: 4rem 2rem; /* Generous padding for desktop, adjusted in media queries */
+  /* REMOVED: background-color: #000000; */
+}
+
+/* --- Starry Background (from React component) --- */
+.starry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind everything else */
+  pointer-events: none; /* Allows interaction with elements behind it */
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white; /* Stars will be white */
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+/* --- Orbiting Background (Main container for all orbiting elements) --- */
+.orbit-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind the main content */
+  pointer-events: none; /* Allows clicks/interaction with content */
+  overflow: hidden; /* Keep orbits within this container */
+}
+
+/* --- Common styles for all planets (including sun, earth, mars, and icons) --- */
+.planet {
+  position: absolute;
+  object-fit: contain; /* Ensures images fit without distortion */
+  border-radius: 50%; /* Make them circular */
+}
+
+/* --- Sun styles and its orbit --- */
+.sun {
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the sun within orbit-background */
+  z-index: 10; /* Ensure sun is on top of orbits if they overlap */
+}
+
+/* Earth and Mars sizes and their individual orbits */
+.earth, .mars {
+  width: 40px;
+  height: 40px;
+  top: 50%; /* Position relative to .orbit-background center */
+  left: 50%; /* Position relative to .orbit-background center */
+  transform: translate(-50%, -50%); /* Center the planet image itself */
+}
+
+/* Orbit animations for Sun, Earth, Mars */
+/* These orbits are around the center of the .orbit-background */
+.orbit-sun {
+  animation: orbit-sun-rotate 40s linear infinite;
+}
+.orbit-earth {
+  animation: orbit-earth-rotate 25s linear infinite;
+}
+.orbit-mars {
+  animation: orbit-mars-rotate 35s linear infinite;
+}
+
+@keyframes orbit-sun-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes orbit-earth-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg); }
+}
+
+@keyframes orbit-mars-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(260px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(260px) rotate(-360deg); }
+}
+
+
+/* --- Group orbit for icon1-9 (the .orbit-wrapper) --- */
+/* This wrapper rotates as a whole, and icons inside it are positioned relative to its center */
+.orbit-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the wrapper itself */
+  width: 100%; /* Take full width of its parent (.orbit-background) */
+  height: 100%; /* Take full height of its parent (.orbit-background) */
+  max-width: 900px; /* Limit the size of this orbiting system */
+  max-height: 900px;
+  aspect-ratio: 1 / 1; /* Keep it circular */
+  animation: group-orbit-rotate 80s linear infinite; /* Group rotation */
+}
+
+/* Common size for icon planets */
+.planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9 {
+  width: 30px;
+  height: 30px;
+  /* They are positioned relative to the .orbit-wrapper's top-left corner */
+}
+
+/* Positioning for icon planets within the .orbit-wrapper */
+.planet1 { top: 10%; left: 40%; }
+.planet2 { top: 20%; right: 20%; }
+.planet3 { top: 40%; right: 5%; }
+.planet4 { top: 60%; right: 10%; }
+.planet5 { top: 80%; left: 30%; }
+.planet6 { top: 70%; left: 5%; }
+.planet7 { top: 30%; left: 10%; } /* New icon position */
+.planet8 { top: 50%; left: 25%; } /* New icon position */
+.planet9 { top: 90%; right: 40%; } /* New icon position */
+
+@keyframes group-orbit-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+/* --- Main Hero Content (Profile Image, Text, Buttons) --- */
+.hero-content {
+  position: relative; /* Stays above solar system */
+  z-index: 2; /* Ensures content is on top */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centers text elements */
+  width: 100%; /* Take full width available */
+  max-width: 1200px; /* Limit content width on very large screens */
+  margin: auto; /* Auto margins for horizontal centering */
+  padding: 20px; /* Inner padding for content */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.profile-img {
+  width: 200px; /* Default size for larger screens */
+  height: 200px; /* Maintain aspect ratio */
+  border-radius: 50%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(107, 33, 168, 0.5); /* Subtle glow */
+}
+
+/* --- Gradient Text for H1 (Vibrant Purple to Gold/Saffron) --- */
+.gradient-text {
+  font-size: 3rem; /* Default font size for larger screens */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  background: linear-gradient(to right, #8e2de2, #ffb347); /* Vibrant Purple to Gold/Saffron */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%; /* Ensure it takes full width for centering */
+  max-width: 65%; /* Restrict width as in your original 'hero h1' */
+}
+
+.gradient-text span {
+  /* Spans inherit the gradient from .gradient-text. No separate styles needed here. */
+}
+
+/* --- Paragraph Text (White and Larger) --- */
+.hero-content p {
+  color: #FFFFFF; /* White text for contrast */
+  font-size: 1.25rem; /* Equivalent to Tailwind's text-xl (20px) */
+  max-width: 600px; /* Max width for readability */
+  margin: 1rem auto 2rem auto; /* Top margin, auto horizontal margin for centering, bottom margin */
+  margin-bottom: 1rem; /* Spacing below the paragraph */
+}
+
+/* --- Hero Action Buttons Container --- */
+.hero-action {
+  display: flex;
+  gap: 1.5rem; /* Space between buttons */
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center; /* Center buttons when wrapped */
+}
+
+/* --- Buttons (.btn) --- */
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none;
+  color: white;
+  background-color: #6b21a8; /* Primary button color (deep purple) */
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none; /* Remove default button border */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.btn:hover {
+  background-color: #581c87; /* Slightly darker purple on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+  .gradient-text {
+    font-size: 2.5rem;
+    max-width: 80%;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    max-width: 70%;
+  }
+  /* Smaller orbits on tablets */
+  @keyframes orbit-sun-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg); }
+  }
+  @keyframes orbit-earth-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
+  }
+  @keyframes orbit-mars-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg); }
+  }
+  .orbit-wrapper {
+    max-width: 700px;
+    max-height: 700px;
+  }
+  .planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9 {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .gradient-text {
+    font-size: 2rem;
+    max-width: 90%;
+  }
+  .profile-img {
+    max-width: 150px;
+    height: 150px;
+  }
+  .hero-action {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+    max-width: 80%;
+  }
+  /* Further smaller orbits on mobile */
+  .sun { width: 80px; height: 80px; }
+  .earth { width: 30px; height: 30px; animation: orbitEarth 15s linear infinite; }
+  .mars { width: 25px; height: 25px; animation: orbitMars 20s linear infinite; }
+  .orbit-wrapper {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9 {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Adjust orbit distances for smaller screens */
+  @keyframes orbit-sun-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(40px) rotate(-360deg); }
+  }
+  @keyframes orbit-earth-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+  @keyframes orbit-mars-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
+  }
+
+  /* Positioning adjustments for smaller screens - relative to smaller orbit-wrapper */
+  .planet1 { transform: rotate(0deg) translate(200px) rotate(0deg); }
+.planet2 { transform: rotate(40deg) translate(200px) rotate(-40deg); }
+.planet3 { transform: rotate(80deg) translate(200px) rotate(-80deg); }
+.planet4 { transform: rotate(120deg) translate(200px) rotate(-120deg); }
+.planet5 { transform: rotate(160deg) translate(200px) rotate(-160deg); }
+.planet6 { transform: rotate(200deg) translate(200px) rotate(-200deg); }
+.planet7 { transform: rotate(240deg) translate(200px) rotate(-240deg); }
+.planet8 { transform: rotate(280deg) translate(200px) rotate(-280deg); }
+.planet9 { transform: rotate(320deg) translate(200px) rotate(-320deg); }
+
+/* Further smaller mobile adjustments */
+@media (max-width: 480px) {
+  .gradient-text {
+    font-size: 1.6rem;
+  }
+  .profile-img {
+    max-width: 120px;
+  }
+  .hero-content p {
+    font-size: 0.8rem;
+    max-width: 90%;
+  }
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
   .orbit-wrapper {
     max-width: 300px;
     max-height: 300px;
   }
+}
+}
+@keyframes rotateWrapper {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.planet {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+/* Further smaller mobile adjustments */
+@media (max-width: 480px) {
+  .gradient-text {
+    font-size: 1.6rem;
+  }
+
+  .hero-action {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: auto;
+  }
+}
 }
