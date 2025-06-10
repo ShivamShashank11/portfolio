@@ -354,3 +354,276 @@ transition: transform 0.3s ease;
     max-width: 150px; /* Adjust logo size for larger screens */
   }
 }
+/* --- Base Styles --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.logo-name {
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #d93a7a, #a944d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10%;
+  position: relative;
+  padding: 0;
+  z-index: 100;
+}
+
+/* Navigation Menu (Desktop) */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  flex-direction: row;
+  justify-content: flex-start;
+  transition: none;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  color: #333;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.anchor-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-menu li p {
+  margin: 0;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li:hover p {
+    color: #a944d0;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+
+/* Social Icons Container (Desktop) */
+.icons-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.linkedin-svg-desktop {
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #0077B5;
+}
+
+.linkedin-svg-desktop:hover {
+  transform: scale(1.2);
+  color: #004d73;
+}
+
+.github-svg-desktop {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, stroke 0.3s ease;
+  stroke: #333;
+  fill: none;
+}
+
+.github-svg-desktop:hover {
+  transform: scale(1.2);
+  stroke: #6e5494;
+}
+
+
+/* --- Mobile Specific Styles --- */
+
+.nav-mob-toggle {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.nav-mob-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-mob-toggle .toggle-hamburger-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: invert(20%) sepia(90%) saturate(2000%) hue-rotate(270deg) brightness(80%) contrast(100%);
+}
+
+.nav-mob-toggle .toggle-cross-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: invert(20%) sepia(90%) saturate(2000%) hue-rotate(270deg) brightness(80%) contrast(100%);
+}
+
+
+/* Mobile Social Icons Container */
+/* This will now be primarily controlled within the mobile media query */
+.nav-mob-social-icons {
+  display: none; /* Hidden by default */
+  /* Reverting to row layout for mobile and aligning left */
+  flex-direction: row; /* Keep icons in one line */
+  align-items: center; /* Vertically align icons if they have different heights (though ours are same) */
+  justify-content: flex-start; /* Align icons to the left within their container */
+  gap: 20px; /* Space between LinkedIn and GitHub icons */
+  width: 100%; /* Take full width of parent menu */
+  padding-left: 0; /* Ensures it starts from the left edge of the menu content area */
+}
+
+.linkedin-svg-mob {
+  font-size: 35px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.linkedin-svg-mob:hover {
+  transform: scale(1.2);
+  color: #a944d0;
+}
+
+.github-svg-mob {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease, stroke 0.2s ease;
+  stroke: white;
+  fill: none;
+}
+
+.github-svg-mob:hover {
+  transform: scale(1.2);
+  stroke: #a944d0;
+}
+
+
+/* --- Media Query for Small Screens (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .navbar {
+    margin: 20px 6%;
+    padding: 0;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  /* Hide Desktop elements */
+  .icons-right {
+    display: none;
+  }
+  .nav-menu:not(.open) {
+    display: none;
+  }
+
+  /* Show mobile toggle icon */
+  .nav-mob-toggle {
+    display: block;
+  }
+
+  /* Mobile menu appearance */
+  .nav-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #1F0016;
+    flex-direction: column;
+    /* Changed align-items back to flex-start for left alignment of all items */
+    align-items: flex-start; /* Align all items to the left (start) */
+    gap: 25px; /* Spacing between menu items and social icons block */
+    transition: right 0.5s ease-in-out;
+    z-index: 999;
+    padding-top: 80px;
+    /* Added left padding for content to align from the left edge of the menu */
+    padding-left: 50px; /* Adjust this value for desired left alignment */
+    padding-right: 20px; /* Optional: small right padding */
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  /* Mobile navigation item styling (for li and p tags) */
+  .nav-menu li {
+    font-size: 22px;
+    gap: 15px; /* Spacing between text and icon within each li */
+    width: auto; /* Let content dictate width */
+    /* Ensure content is aligned to the left within its own li */
+    justify-content: flex-start;
+  }
+  .nav-menu li p {
+    color: white;
+    text-align: left; /* Ensure text is left-aligned */
+  }
+  .nav-menu .anchor-link {
+    color: white;
+  }
+  .nav-menu li:hover p {
+      color: #d93a7a;
+  }
+
+  .menu-icon {
+    /* No filter here, will use original colors */
+  }
+
+  /* Show and position mobile social icons when menu is open */
+  .nav-mob-social-icons {
+    display: flex; /* Activate flex for this container */
+    flex-direction: row; /* Make them horizontal (one line) */
+    justify-content: flex-start; /* Align icons to the left */
+    gap: 20px; /* Space between the two icons */
+    margin-top: 20px; /* Space below last navigation item */
+    /* No need for padding-left here, as parent .nav-menu provides it */
+  }
+}

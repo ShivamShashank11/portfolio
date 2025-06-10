@@ -606,3 +606,348 @@ p {
     }
   }
 }
+/* Hero.css - Consolidated, Centered, and ALL elements styled */
+
+/* --- Base Hero Container & Layout --- */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; /* Crucial for containing background elements like stars/planets */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  text-align: center; /* Center text within the hero-content */
+  z-index: 1; /* Ensures hero content is above body background */
+  padding: 4rem 2rem; /* Generous padding for desktop, adjusted in media queries */
+  /* REMOVED: background-color: #000000; */
+}
+
+/* --- Starry Background (from React component) --- */
+.starry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind everything else */
+  pointer-events: none; /* Allows interaction with elements behind it */
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white; /* Stars will be white */
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+/* --- Orbiting Background (Main container for all orbiting elements) --- */
+.orbit-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind the main content */
+  pointer-events: none; /* Allows clicks/interaction with content */
+  overflow: hidden; /* Keep orbits within this container */
+}
+
+/* --- Common styles for all planets (including sun, earth, mars, and icons) --- */
+.planet {
+  position: absolute;
+  object-fit: contain; /* Ensures images fit without distortion */
+  border-radius: 50%; /* Make them circular */
+}
+
+/* --- Sun styles and its orbit --- */
+.sun {
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the sun within orbit-background */
+  z-index: 10; /* Ensure sun is on top of orbits if they overlap */
+}
+
+/* Earth and Mars sizes and their individual orbits */
+.earth, .mars {
+  width: 40px;
+  height: 40px;
+  top: 50%; /* Position relative to .orbit-background center */
+  left: 50%; /* Position relative to .orbit-background center */
+  transform: translate(-50%, -50%); /* Center the planet image itself */
+}
+
+/* Orbit animations for Sun, Earth, Mars */
+/* These orbits are around the center of the .orbit-background */
+.orbit-sun {
+  animation: orbit-sun-rotate 40s linear infinite;
+}
+.orbit-earth {
+  animation: orbit-earth-rotate 25s linear infinite;
+}
+.orbit-mars {
+  animation: orbit-mars-rotate 35s linear infinite;
+}
+
+@keyframes orbit-sun-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes orbit-earth-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg); }
+}
+
+@keyframes orbit-mars-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(260px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(260px) rotate(-360deg); }
+}
+
+
+/* --- Group orbit for icon1-9 (the .orbit-wrapper) --- */
+/* This wrapper rotates as a whole, and icons inside it are positioned relative to its center */
+.orbit-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the wrapper itself */
+  width: 100%; /* Take full width of its parent (.orbit-background) */
+  height: 100%; /* Take full height of its parent (.orbit-background) */
+  max-width: 900px; /* Limit the size of this orbiting system */
+  max-height: 900px;
+  aspect-ratio: 1 / 1; /* Keep it circular */
+  animation: group-orbit-rotate 80s linear infinite; /* Group rotation */
+}
+
+/* Common size for icon planets */
+.planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9 {
+  width: 30px;
+  height: 30px;
+  /* They are positioned relative to the .orbit-wrapper's top-left corner */
+}
+
+/* Positioning for icon planets within the .orbit-wrapper */
+.planet1 { top: 10%; left: 40%; }
+.planet2 { top: 20%; right: 20%; }
+.planet3 { top: 40%; right: 5%; }
+.planet4 { top: 60%; right: 10%; }
+.planet5 { top: 80%; left: 30%; }
+.planet6 { top: 70%; left: 5%; }
+.planet7 { top: 30%; left: 10%; } /* New icon position */
+.planet8 { top: 50%; left: 25%; } /* New icon position */
+.planet9 { top: 90%; right: 40%; } /* New icon position */
+
+@keyframes group-orbit-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+/* --- Main Hero Content (Profile Image, Text, Buttons) --- */
+.hero-content {
+  position: relative; /* Stays above solar system */
+  z-index: 2; /* Ensures content is on top */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centers text elements */
+  width: 100%; /* Take full width available */
+  max-width: 1200px; /* Limit content width on very large screens */
+  margin: auto; /* Auto margins for horizontal centering */
+  padding: 20px; /* Inner padding for content */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.profile-img {
+  width: 200px; /* Default size for larger screens */
+  height: 200px; /* Maintain aspect ratio */
+  border-radius: 50%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(107, 33, 168, 0.5); /* Subtle glow */
+}
+
+/* --- Gradient Text for H1 (Vibrant Purple to Gold/Saffron) --- */
+.gradient-text {
+  font-size: 3rem; /* Default font size for larger screens */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  background: linear-gradient(to right, #8e2de2, #ffb347); /* Vibrant Purple to Gold/Saffron */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%; /* Ensure it takes full width for centering */
+  max-width: 65%; /* Restrict width as in your original 'hero h1' */
+}
+
+.gradient-text span {
+  /* Spans inherit the gradient from .gradient-text. No separate styles needed here. */
+}
+
+/* --- Paragraph Text (White and Larger) --- */
+.hero-content p {
+  color: #FFFFFF; /* White text for contrast */
+  font-size: 1.25rem; /* Equivalent to Tailwind's text-xl (20px) */
+  max-width: 600px; /* Max width for readability */
+  margin: 1rem auto 2rem auto; /* Top margin, auto horizontal margin for centering, bottom margin */
+  margin-bottom: 1rem; /* Spacing below the paragraph */
+}
+
+/* --- Hero Action Buttons Container --- */
+.hero-action {
+  display: flex;
+  gap: 1.5rem; /* Space between buttons */
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center; /* Center buttons when wrapped */
+}
+
+/* --- Buttons (.btn) --- */
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none;
+  color: white;
+  background-color: #6b21a8; /* Primary button color (deep purple) */
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none; /* Remove default button border */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.btn:hover {
+  background-color: #581c87; /* Slightly darker purple on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+  .gradient-text {
+    font-size: 2.5rem;
+    max-width: 80%;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    max-width: 70%;
+  }
+  /* Smaller orbits on tablets */
+  @keyframes orbit-sun-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(60px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(60px) rotate(-360deg); }
+  }
+  @keyframes orbit-earth-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
+  }
+  @keyframes orbit-mars-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg); }
+  }
+  .orbit-wrapper {
+    max-width: 700px;
+    max-height: 700px;
+  }
+  .planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9 {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .gradient-text {
+    font-size: 2rem;
+    max-width: 90%;
+  }
+  .profile-img {
+    max-width: 150px;
+    height: 150px;
+  }
+  .hero-action {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+    max-width: 80%;
+  }
+  /* Further smaller orbits on mobile */
+  .sun { width: 80px; height: 80px; }
+  .earth { width: 30px; height: 30px; animation: orbitEarth 15s linear infinite; }
+  .mars { width: 25px; height: 25px; animation: orbitMars 20s linear infinite; }
+  .orbit-wrapper {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9 {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Adjust orbit distances for smaller screens */
+  @keyframes orbit-sun-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(40px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(40px) rotate(-360deg); }
+  }
+  @keyframes orbit-earth-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+  @keyframes orbit-mars-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
+  }
+
+  /* Positioning adjustments for smaller screens - relative to smaller orbit-wrapper */
+  .planet1 { top: 10%; left: 35%; }
+  .planet2 { top: 15%; right: 15%; }
+  .planet3 { top: 35%; right: 5%; }
+  .planet4 { top: 55%; right: 8%; }
+  .planet5 { top: 75%; left: 25%; }
+  .planet6 { top: 65%; left: 5%; }
+  .planet7 { top: 25%; left: 8%; }
+  .planet8 { top: 45%; left: 20%; }
+  .planet9 { top: 85%; right: 30%; }
+}
+
+/* Further smaller mobile adjustments */
+@media (max-width: 480px) {
+  .gradient-text {
+    font-size: 1.6rem;
+  }
+  .profile-img {
+    max-width: 120px;
+  }
+  .hero-content p {
+    font-size: 0.8rem;
+    max-width: 90%;
+  }
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .orbit-wrapper {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}

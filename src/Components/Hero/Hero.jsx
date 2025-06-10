@@ -10,7 +10,39 @@ import icon3 from "../../assets/icon3.png";
 import icon4 from "../../assets/icon4.png";
 import icon5 from "../../assets/icon5.png";
 import icon6 from "../../assets/icon6.png";
+import icon7 from "../../assets/icon7.png";
+import icon8 from "../../assets/icon8.png";
+import icon9 from "../../assets/icon9.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+
+const Star = () => {
+  const size = Math.random() * 2 + 1; // Random size between 1px and 3px
+  const x = Math.random() * 100;
+  const y = Math.random() * 100;
+  const animationDuration = Math.random() * 2 + 1; // Random duration between 1s and 3s
+  const animationDelay = Math.random() * 2; // Random delay up to 2s
+
+  const style = {
+    width: `${size}px`,
+    height: `${size}px`,
+    borderRadius: "50%",
+    backgroundColor: "white",
+    position: "absolute",
+    left: `${x}%`,
+    top: `${y}%`,
+    opacity: 0,
+    animation: `twinkle ${animationDuration}s infinite alternate ${animationDelay}s`,
+  };
+
+  return <div className="star" style={style}></div>;
+};
+
+const StarryBackground = ({ count }) => {
+  const stars = Array.from({ length: count }, (_, index) => (
+    <Star key={index} />
+  ));
+  return <div className="starry-background">{stars}</div>;
+};
 
 const Hero = () => {
   return (
@@ -19,6 +51,9 @@ const Hero = () => {
       className="hero min-h-screen relative overflow-hidden"
       style={{ zIndex: 1 }}
     >
+      {/* Starry Background */}
+      <StarryBackground count={200} />
+
       {/* Orbiting Background */}
       <div className="orbit-background">
         {/* Individual orbits for sun, earth, mars */}
@@ -34,6 +69,9 @@ const Hero = () => {
           <img src={icon4} alt="icon4" className="planet planet4" />
           <img src={icon5} alt="icon5" className="planet planet5" />
           <img src={icon6} alt="icon6" className="planet planet6" />
+          <img src={icon7} alt="icon7" className="planet planet7" />
+          <img src={icon8} alt="icon8" className="planet planet8" />
+          <img src={icon9} alt="icon" className="planet planet6" />
         </div>
       </div>
 
